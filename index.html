@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Print of Hello</title>
+
+    <style>
+
+        body {
+            background-color: #fff;
+        }
+
+        @font-face {
+            font-family: 'aero';
+
+            src: url('aero2/Aero.ttf');
+        }
+
+        h1 {
+            margin: 250px auto;
+            font-family: 'aero';
+            text-align: center;
+            color:  #303037;
+            font-size: 50pt;
+            padding: 0;
+        }
+
+        h1 span {
+            color: #fc25fc ;
+        }
+
+        p {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body id="main">
+
+<h1 id="logo"> Print of <span id="hello">"Hello"</span>  </h1>
+<p> Created by Print of Hello 2018 - access <a href='https://github.com/ofHelloPrint'> GitHub </a> </p>
+
+
+<script>
+
+    var colors = [
+        {
+            "name": "green",
+            "hex": "#6dff2d"
+        },
+        {
+            "name": "orange",
+            "hex": "#fc5925"
+        },
+        {
+
+            "name": "red",
+            "hex": "#fc2525"
+        },
+        {
+            "name": "blue",
+            "hex": "#2553fc"
+        },
+        {
+            "name": "pink",
+            "hex": "#fc25fc"
+        }
+    ];
+
+    var bg = [
+        {
+            "name": "black",
+            "hex": "#303037"
+        },
+        {
+            "name": "white",
+            "hex": "#FFFFFFF"
+        }
+    ]
+
+    var body = document.querySelector("#main");
+    var logo = document.querySelector("#logo");    
+    var hello = document.querySelector("#hello");
+
+    function rand(max) {
+        return Math.floor(0 + Math.random() * (max - 0));
+    }
+
+    var bgColor = bg[rand(bg.length)];
+
+    if ( bgColor.name === 'black' ) {
+    
+        body.style.background = bgColor.hex;
+        
+        logo.style.color = colors[0].hex;
+
+        var filter = colors.filter((c) => c.name != 'green');
+
+        hello.style.color = filter[rand(filter.length)].hex;
+
+    } else {
+
+        hello.style.color = colors[rand(colors.length)].hex;
+    
+    }
+
+
+
+</script>
+
+</body>
+</html>
