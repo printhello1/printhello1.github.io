@@ -1,3 +1,3 @@
 Technologies in Practice
 
-*https://github.com/printhello1*
+*https://printhello1.github.io/*
